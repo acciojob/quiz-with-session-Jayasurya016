@@ -44,7 +44,7 @@ let finalScore = localStorage.getItem("score");
 
 // Show score if already submitted
 if (finalScore !== null) {
-  scoreElement.textContent = Your score is ${finalScore} out of ${questions.length}.;
+  scoreElement.textContent = `Your score is ${finalScore} out of ${questions.length}.`;
 }
 
 // =====================
