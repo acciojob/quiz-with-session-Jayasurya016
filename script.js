@@ -66,7 +66,7 @@ function renderQuestions() {
       const label = document.createElement("label");
       const choiceElement = document.createElement("input");
       choiceElement.type = "radio";
-      choiceElement.name = question-${i};
+      choiceElement.name = `question-${i}`;
       choiceElement.value = choice;
 
       // Restore from sessionStorage
@@ -82,7 +82,7 @@ function renderQuestions() {
 
         // Reset other options' checked attribute
         document
-          .querySelectorAll(input[name="question-${i}"])
+          .querySelectorAll(`input[name="question-${i}"]`)
           .forEach(input => input.removeAttribute("checked"));
 
         choiceElement.setAttribute("checked", "true"); // ✅ for Cypress
@@ -109,6 +109,6 @@ submitBtn.addEventListener("click", () => {
       score++;
     }
   }
-  scoreElement.textContent = Your score is ${score} out of ${questions.length}.;
+  scoreElement.textContent = `Your score is ${score} out of ${questions.length}.`;
   localStorage.setItem("score", score);
 });
